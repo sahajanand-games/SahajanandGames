@@ -16,7 +16,7 @@ export const ninemensmorrisGameDef: IGameDef = {
  known as Mills. You can play multi-player or with your friend\
  locally!`,
   instructions: {
-    videoId: 'zvbIKOHIkRE',
+    // videoId: 'zvbIKOHIkRE',
     text: instructions,
   },
   status: IGameStatus.PUBLISHED,

@@ -1,1 +1,4 @@
 Guess-the-Word is a well known two-player game. A player is asked to guess a word, given only its length and a hint. The player tries to guess the characters in the word and is allowed to make up to 10 incorrect guesses. If the player guesses the word correctly, the final score is the ratio of the number of correct guesses and the total number of guesses made. If more than 10 incorrect guesses were made, the final score is zero. 
+
+
+ગેસ-ધ-વર્ડ એ જાણીતી બે ખેલાડીઓની રમત છે. કોઈ ખેલાડીને કોઈ શબ્દનો અનુમાન લગાવવાનું કહેવામાં આવે છે, ફક્ત તેની લંબાઈ અને કોઈ સંકેત શબ્દ ની ચાવી રૂપે આપી શકાશે. જયારે ખેલાડી શબ્દના અક્ષરોનો અંદાજ કાઢવાનો પ્રયત્ન કરે છે ત્યારે 10 જેટલા ખોટા અનુમાન લગાવવાની મંજૂરી છે. જો ખેલાડીએ શબ્દનો યોગ્ય અંદાજ લગાવ્યો હોય, તો અંતિમ સ્કોર એ સાચા અનુમાનની સંખ્યા અને કરેલા અનુમાનની કુલ સંખ્યાનું ગુણોત્તર છે. જો 10 થી વધુ ખોટા અનુમાન લગાવ્યા હતા, તો અંતિમ સ્કોર શૂન્ય હશે.
