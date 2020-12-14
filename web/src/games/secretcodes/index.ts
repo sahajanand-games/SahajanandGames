@@ -16,7 +16,7 @@ export const secretcodesGameDef: IGameDef = {
  that can be used to learn Vachnamrut and other satsang books in,\
  a fun way.`,
   instructions: {
-    videoId: 'J8RWBooJivg',
+    // videoId: 'J8RWBooJivg',
     text: instructions,
   },
   status: IGameStatus.PUBLISHED,

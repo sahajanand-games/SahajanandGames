@@ -15,7 +15,7 @@ export const reversiGameDef: IGameDef = {
  to Rollit and Othello. You can play multi-player online or \
  share your device and play locally against a friend.`,
   instructions: {
-    videoId: 'hC1sgDNrqq0',
+    // videoId: 'hC1sgDNrqq0',
     text: instructions,
   },
   status: IGameStatus.PUBLISHED,
