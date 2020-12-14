@@ -1,21 +1,14 @@
-import { blue, green } from '@material-ui/core/colors';
+import { blue, red } from '@material-ui/core/colors';
 
-export const CARD_CONTENT = {
-  elephant: require('./media/elephant.jpg'),
-  crocodile: require('./media/crocodile.jpg'),
-  zebra: require('./media/zebra.jpg'),
-  girraf: require('./media/girraf.jpg'),
-  shark: require('./media/shark.jpg'),
-  starfish: require('./media/starfish.jpg'),
-  lion: require('./media/lion.jpg'),
-  parrot: require('./media/parrot.jpg'),
-  owl: require('./media/owl.jpg'),
-  seahorse: require('./media/seahorse.jpg'),
-  tortoise: require('./media/tortoise.jpg'),
-  vulture: require('./media/vulture.jpg'),
-};
+
+const _content = {}; 
+for (let i = 0; i < 23; i++){
+  _content[`murti_${i}`] = require(`./media/murti/hari_${i}.png`);
+}
+export const CARD_CONTENT = _content;
+
 
 export const PLAYER_COLORS = {
   '0': blue[500],
-  '1': green[500],
+  '1': red[500],
 };
