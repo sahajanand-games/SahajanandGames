@@ -14,7 +14,7 @@ export const hangmanGameDef: IGameDef = {
   description: 'સામે વાળા આપેલો શબ્દ શોધી કાઢો',
   descriptionTag: `Play Guess the Word for free online. You can either play a multi-player game against a friend online, or share your device and play locally against a friend.`,
   instructions: {
-    videoId: 'leW9ZotUVYo',
+    // videoId: 'leW9ZotUVYo',
     text: instructions,
   },
   status: IGameStatus.PUBLISHED,

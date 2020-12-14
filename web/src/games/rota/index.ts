@@ -14,7 +14,7 @@ export const rotaGameDef: IGameDef = {
   description: 'જુઓ જુઓને સાહેલીઓ આજ, રસિયો રાસ રમે',
   descriptionTag: `Play Rass, just like Shreeji Maharaj played in Panchala. You can play multi-player or with your friend locally!`,
   instructions: {
-    videoId: '_XVs7CmSXTw',
+    // videoId: '_XVs7CmSXTw',
     text: instructions,
   },
   status: IGameStatus.PUBLISHED,
