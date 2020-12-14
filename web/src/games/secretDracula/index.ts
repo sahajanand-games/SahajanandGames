@@ -4,8 +4,9 @@ import { IGameDef, IGameStatus } from 'gamesShared/definitions/game';
 import instructions from './instructions.md';
 
 export const secretDraculaGameDef: IGameDef = {
+  urlName: 'secret-kusang',
   code: 'secretDracula',
-  name: 'Secret Dracula',
+  name: 'Secret Kusang',
   imageURL: Thumbnail,
   modes: [
     { mode: GameMode.OnlineFriend },
@@ -14,10 +15,10 @@ export const secretDraculaGameDef: IGameDef = {
   ],
   minPlayers: 5,
   maxPlayers: 10,
-  description: 'Similar to Secret Hitler',
-  descriptionTag: 'Secret Dracula',
+  description: 'સત્સંગમાં કુસંગ ને ઓળખતા શીખો!',
+  descriptionTag: 'Secret Kusang',
   instructions: {
-    videoId: 'mbGXIDYdtas',
+    // videoId: 'mbGXIDYdtas',
     text: instructions,
   },
   status: IGameStatus.PUBLISHED,

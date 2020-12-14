@@ -7,11 +7,11 @@ export const PI_AREA_HEIGHT = 5;
 export const PI_MIN_NAME_SIZE = 8;
 
 // different SYMOBLES
-export const SY_PRIEST = '✝️';
+export const SY_PRIEST = '🙏';
 export const SY_MAYOR = '🏅';
 export const SY_CANDIDATE = '❓';
-export const SY_HUMANS = ['👨‍', '🧑‍', '👨‍🦱', '🙎‍♀️', '👨‍🦰', '👳‍', '‍👱‍♀️', '🧔', '👨‍🦳', '👨', '👳‍', '👳‍', '👳‍', '👳‍'];
-export const SY_VAMPIRE = '🧛';
+export const SY_HUMANS = ['👨‍', '🧑‍', '👨‍🦱', '👴', '👨‍🦰', '👳‍', '👱‍♂️', '👨', '👨‍🦳', '🧔'];
+export const SY_VAMPIRE = '🧛‍♂️';
 export const SY_DRACULA = '👑';
 export const SY_GOOD_PO = '💧'; // Good policy symbol
 export const SY_BAD_PO = '🩸'; // Bad policy symbol
@@ -26,18 +26,18 @@ export const SY_COFFIN = '⚰️';
 export const SY_DEAD = '🥀';
 
 // common names
-export const N_PRIEST = 'Priest ' + SY_PRIEST;
-export const N_MAYOR = 'Mayor ' + SY_MAYOR;
-export const N_VILLAGER = 'Villager 🧑‍🤝‍🧑';
-export const N_VILLAGERS = 'Villagers 🧑‍🤝‍🧑🧑‍🤝‍🧑🧑‍🤝‍🧑';
-export const N_VAMPIRE = 'Vampire ' + SY_VAMPIRE;
-export const N_VAMPIRES = 'Vampires ' + SY_VAMPIRE + SY_VAMPIRE + SY_VAMPIRE;
-export const N_SAMPLE = 'Sample';
+export const N_PRIEST = 'Sēvak ' + SY_PRIEST;
+export const N_MAYOR = 'San̄cālak ' + SY_MAYOR;
+export const N_VILLAGER = 'Satsaṅgī 🧑‍🤝‍🧑';
+export const N_VILLAGERS = 'Satsaṅg 🧑‍🤝‍🧑🧑‍🤝‍🧑🧑‍🤝‍🧑';
+export const N_VAMPIRE = 'Kusaṅgī ' + SY_VAMPIRE;
+export const N_VAMPIRES = 'Kusaṅgīs ' + SY_VAMPIRE + SY_VAMPIRE + SY_VAMPIRE;
+export const N_SAMPLE = 'Āyōjan';
 export const N_VETO = 'Veto ✋';
 export const N_AGREE_VETO = 'Agree Veto ' + SY_TUP;
 export const N_REJECT_VETO = 'Reject Veto ' + SY_TDOWN;
 export const N_EXECUTE = 'Execute ' + SY_EXECUTE;
-export const N_DRACULA = 'Dracula';
+export const N_DRACULA = 'Kāḷīdat';
 
 // phase titles
 export const PHASE_TITLES = {

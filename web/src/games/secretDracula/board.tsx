@@ -78,7 +78,7 @@ export class Board extends React.Component<IBoardProps, IBoardState> {
         hintText.push(`${CNST.SY_PEEK} - allows ${CNST.N_MAYOR} to see upcoming cards.`);
         hintText.push(`${CNST.SY_INVESTG} - allows ${CNST.N_MAYOR} to investigate a player.`);
         hintText.push(`${CNST.SY_ELECT} - a new ${CNST.N_MAYOR} gets elected.`);
-        hintText.push(`${CNST.SY_EXECUTE} - requires ${CNST.N_MAYOR} to a player to execute.`);
+        hintText.push(`${CNST.SY_EXECUTE} - requires ${CNST.N_MAYOR} to execute a player.`);
         hintText.push(`${CNST.SY_COFFIN} - ${CNST.N_VAMPIRES} win the game.`);
         break;
 
@@ -106,7 +106,7 @@ export class Board extends React.Component<IBoardProps, IBoardState> {
       case 'draculaStrong':
         hintText.push(`${CNST.N_VAMPIRES} are now strong 💪🏻.`);
         hintText.push(
-          `Here on, electing Electing ${CNST.N_DRACULA} as ${CNST.N_PRIEST} ends the game in favor of the ${CNST.N_VAMPIRES}`,
+          `Here on, electing ${CNST.N_DRACULA} as ${CNST.N_PRIEST} ends the game in favor of the ${CNST.N_VAMPIRES}`,
         );
         break;
     }
@@ -259,7 +259,7 @@ export class Board extends React.Component<IBoardProps, IBoardState> {
           ];
         } else {
           message.info = [`Wait for the ${CNST.N_MAYOR} to nominate a ${CNST.N_PRIEST} for voting ...`];
-          message.text = [`${CNST.SY_CANDIDATE} tag represents possible nominees for priest.`];
+          message.text = [`${CNST.SY_CANDIDATE} tag represents possible nominees for ${CNST.N_PRIEST}.`];
         }
         break;
 
@@ -330,7 +330,7 @@ export class Board extends React.Component<IBoardProps, IBoardState> {
           ];
           message.text = ['Click Okay to continue...'];
         } else {
-          message.text = [`The ${CNST.N_MAYOR} is looking at te next three samples.`];
+          message.text = [`The ${CNST.N_MAYOR} is looking at the next three samples.`];
         }
         break;
 

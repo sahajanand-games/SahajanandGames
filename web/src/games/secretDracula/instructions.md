@@ -1,12 +1,8 @@
-Thank you to https://www.secrethitler.com ! 
+In this game, there is a small Satsang Mandal which has some secret Kusaṅgīs. The Satsangis don't know who the Kusaṅgīs are, but the Kusaṅgīs know each other. 
 
-This game 'Secret Dracula' is an interpretaion of 'Secret Hitler'. See
-https://www.secrethitler.com/assets/Secret_Hitler_Rules.pdf for the rules of Secret Hitler. The differences between 'Secret Hitler' and 'Secret Dracula' are mainly cosmetic, as the rules of the game remain the same.
+In each turn, one player is a San̄cālak, and picks another player to be a Sēvak for some Āyōjan (Activity). Then, out of three Āyōjans, the San̄cālak has to pass two Āyōjan to the Sēvak and discard one Āyōjan. Thereafter, the elected Sēvak selects the final Āyōjan to be passed. The played Āyōjans can either be good (💧) or bad (🩸) for the Satsang.
 
-A GAME OF DECITE, LIES AND VAMPIRES!
+The Satsaṅgīs win by passing 5 Satsang-related Āyōjans, or by killing Kāḷīdat (the king 👑 of Kusaṅgīs). Kusaṅgīs win by passing 6 Kusaṅgrelated Āyōjans, or passing 3 Āyōjans and electing Kāḷīdat as the Sēvak. 
 
-In Secret Dracula, there are two group of players, the vampires and the rest of the village. One of the vampires is Dracula. Even though Vampires are a minority, they know each other identities, while villagers do not.
 
-On each turn, one player is a mayor candidate, and picks another player to be a priest. Then, the elected mayor gets to discard one of three cards that can be either blood (favoring vampires) or a village card. The elected priest then picks one of the two cards left to be enacted as a policy. 
-
-Villagers win by passing 5 village policies, or killing the Dracula. Vampires win by passing 6 vampire policies, or passing 3 policies and electing Dracula as mayor. 
+This game has been inspired [from here](https://www.secrethitler.com).

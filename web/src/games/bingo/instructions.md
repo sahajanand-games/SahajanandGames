@@ -1,3 +1,1 @@
-The objective of the game is to be the first player to get 5 in a row horizontally, vertically, or diagonally. Each player gets a card with numbers arranged in a 5x5 table, and is required to marker the announced number. The computer then calls out a number and each player then marks the called letter on their card if it is present. If a player has 5 in a row they call out “BINGO” (by pressing the shout button). 
-
-Image credits [Freepik](http://www.freepik.com)
+In this game, each player gets a 5x5 table filled with different Murtis of Bhagwan and the computer will show different Murtis of Bhagwan randomly. If you have the Murti shown above in your table, they you shall mark that Murti by clicking it. The objective of the game is to be the first player to mark 5 Murits in a row horizontally, vertically, or diagonally. To claim your Victory, you should press the "Shreeji" button.
