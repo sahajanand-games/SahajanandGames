@@ -18,8 +18,8 @@ export const tictactoeplusGameDef: IGameDef = {
     { mode: GameMode.OnlineFriend },
     { mode: GameMode.LocalFriend },
   ],
-  description: 'નવી સુન-ચોકડી જેમાં શ્રીજી પધારશે',
-  descriptionTag: `Play Tic-Tac-Toe-Plus for \
+  description: 'નવી શૂન્ય-ચોકડી જેમાં શ્રીજી પધારશે',
+  descriptionTag: `Play Tic-Tac-Toe for \
  free online. You can either play a single-player game against the computer,\
  a multi-player game against a friend online, or share your device and play\
  locally against a friend.`,

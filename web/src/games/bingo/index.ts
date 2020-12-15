@@ -5,15 +5,16 @@ import instructions from './instructions.md';
 
 export const BingoDef: IGameDef = {
   code: 'bingo',
-  name: 'Bingo',
+  urlName: 'shreeji-darshan',
+  name: 'Shreeji Darshan',
   minPlayers: 2,
   maxPlayers: 30,
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }],
-  description: 'Try your luck at Bingo!',
-  descriptionTag: 'Play Bingo for free online with upto 30 persons.',
+  description: 'ચાલો આંખો પાવન કરીએ શ્રીજીના દર્શનથી!',
+  descriptionTag: 'Play shreeji darshan for free online with upto 30 persons.',
   instructions: {
-    videoId: 'dJ4YDTqmhJk',
+    // videoId: 'dJ4YDTqmhJk',
     text: instructions,
   },
   config: () => import('./config'),

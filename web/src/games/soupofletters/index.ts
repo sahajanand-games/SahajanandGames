@@ -10,7 +10,7 @@ export const soupOfLettersGameDef: IGameDef = {
   modes: [{ mode: GameMode.LocalFriend }, { mode: GameMode.OnlineFriend }],
   minPlayers: 2,
   maxPlayers: 4,
-  description: 'Crosswords with friends.',
+  description: 'આધ્યાત્મિક શબ્દો થી ભરપૂર આડી-ઉભી ચાવી',
   descriptionTag: `Soup of letters, Alphabet soup, Crosswords. Find words in puzzle game.`,
   instructions: {
     // videoId: '_XVs7CmSXTw',
