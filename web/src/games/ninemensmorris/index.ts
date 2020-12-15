@@ -12,7 +12,7 @@ export const ninemensmorrisGameDef: IGameDef = {
   minPlayers: 2,
   maxPlayers: 2,
   description: 'ત્રણ મૂર્તિ ગોઠવી ને સામે વાળા ને Out કરો',
-  descriptionTag: `Play Nine Men's Morris, a free online game also\
+  descriptionTag: `Play Tri-Murti, a free online game also\
  known as Mills. You can play multi-player or with your friend\
  locally!`,
   instructions: {

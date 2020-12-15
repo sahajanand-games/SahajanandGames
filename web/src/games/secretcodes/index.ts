@@ -12,7 +12,7 @@ export const secretcodesGameDef: IGameDef = {
   minPlayers: 4,
   maxPlayers: 20,
   description: 'એવું secret જે શ્રીજી ની કૃપા થી જ મળશે',
-  descriptionTag: `Play Sahaj Secret, a free online game\
+  descriptionTag: `Play Shreeji Secret, a free online game\
  that can be used to learn Vachnamrut and other satsang books in,\
  a fun way.`,
   instructions: {

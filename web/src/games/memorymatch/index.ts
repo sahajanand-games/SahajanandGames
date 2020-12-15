@@ -5,7 +5,8 @@ import instructions from './instructions.md';
 
 export const memoryMatchDef: IGameDef = {
   code: 'memorymatch',
-  name: 'Memory Match',
+  name: 'Hari Smruti',
+  urlName: 'hari-smruti',
   minPlayers: 2,
   maxPlayers: 2,
   imageURL: Thumbnail,
@@ -19,8 +20,8 @@ export const memoryMatchDef: IGameDef = {
       // extraInfo: { type: 'dropdown', options: ['Easy', 'Hard'] } as IGameModeExtraInfoDropdown,
     },
   ],
-  description: 'A small game to sharpen memory',
-  descriptionTag: `Play memory match for free online. You can either play a multi-player game against a friend online, or share your device and play locally against a friend.`,
+  description: 'હરિની સ્મૃતિ સાથે યાદશક્તિ વધારો',
+  descriptionTag: `Play hari smruti for free online. You can either play a multi-player game against a friend online, or share your device and play locally against a friend.`,
   instructions: {
     // videoId: 'leW9ZotUVYo',
     text: instructions,
