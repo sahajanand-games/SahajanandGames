@@ -42,8 +42,8 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="68.698787"
-     inkscape:cy="317.10862"
+     inkscape:cx="70.127358"
+     inkscape:cy="310.89356"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -402,7 +402,7 @@
        transform="matrix(2.8727653,0,0,2.705645,240.76902,-99.268929)" />
     <g
        id="g1926"
-       transform="translate(0,4.7625002)">
+       transform="matrix(-1,0,0,1,136.04111,4.7625002)">
       <g
          transform="matrix(1,0,0,1.5969697,-1.0583333,-144.93232)"
          id="g1464">
