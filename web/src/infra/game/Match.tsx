@@ -7,7 +7,7 @@ import NicknameRequired from 'infra/common/components/auth/NicknameRequired';
 import MessagePage from 'infra/common/components/alert/MessagePageClass';
 import { GetMatch_match } from 'gqlTypes/GetMatch';
 import { LobbyService } from 'infra/common/services/LobbyService';
-import * as Sentry from '@sentry/browser';
+// import * as Sentry from '@sentry/browser';
 
 interface MatchProps {
   router: NextRouter;
@@ -34,7 +34,7 @@ export class Match extends React.Component<MatchProps, MatchState> {
           this.setState({ loading: false, match: null });
         } else {
           this.setState({ loading: false, error: true });
-          Sentry.captureException(e);
+          // Sentry.captureException(e);
         }
       });
   }

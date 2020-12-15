@@ -12,7 +12,7 @@ import withError from 'next-with-error';
 import ErrorPage from './_error';
 import ReactGA from 'react-ga';
 import Router from 'next/router';
-import * as Sentry from '@sentry/browser';
+// import * as Sentry from '@sentry/browser';
 
 import { wrapper } from 'infra/common/redux/store';
 import { ApolloClient, split, InMemoryCache } from '@apollo/client';
@@ -23,7 +23,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import AddressHelper from 'infra/common/helpers/AddressHelper';
 
 const GA_TRACKING_CODE = 'UA-160612549-1';
-const SENTRY_DSN = 'https://XXXX@XXXX.ingest.sentry.io/XXXX';
+// const SENTRY_DSN = 'https://XXXX@XXXX.ingest.sentry.io/XXXX';
 
 const httpLink = createHttpLink({
   uri: AddressHelper.getGraphQLServerAddress(),
@@ -81,7 +81,7 @@ class defaultApp extends App {
       const channel = process.env.CHANNEL;
       let release;
       if (version && channel) release = `${version}-${channel}`;
-      Sentry.init({ dsn: SENTRY_DSN, release });
+      // Sentry.init({ dsn: SENTRY_DSN, release });
     }
     // https://github.com/sergiodxa/next-ga/blob/32899e9635efe1491a5f47469b0bd2250e496f99/src/index.js#L32
     (Router as any).onRouteChangeComplete = (path: string) => {

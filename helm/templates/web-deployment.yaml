@@ -25,7 +25,7 @@ spec:
           value: WEB
         - name: FBG_BACKEND_TARGET
           value: http://{{ .Release.Name }}-fbg-server
-        image: freeboardgames/web
+        image: shjgames/web
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 3

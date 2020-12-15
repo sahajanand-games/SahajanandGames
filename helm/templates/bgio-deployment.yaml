@@ -27,7 +27,7 @@ spec:
           value: postgresql://{{ .Values.postgresql.postgresqlUsername }}:{{ .Values.postgresql.postgresqlPassword }}@{{ .Release.Name }}-postgresql.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.postgresql.service.port }}/{{ .Values.postgresql.postgresqlDatabase }}
         - name: BGIO_PORT
           value: "8001"
-        image: freeboardgames/web
+        image: shjgames/web
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 3
