@@ -45,13 +45,13 @@ export class Board extends React.Component<IBoardProps, {}> {
       }
       return 'Waiting for opponent...';
     } else if (this.props.G.haveToRemovePiece) {
-      return `${prefix} REMOVE PIECE`;
+      return `${prefix} REMOVE MURTI`;
     }
 
     if (this.props.ctx.phase === Phase.Place) {
-      return `${prefix} PLACE PIECE`;
+      return `${prefix} PLACE MURTI`;
     } else {
-      return `${prefix} MOVE PIECE`;
+      return `${prefix} MOVE MURTI`;
     }
   }
 

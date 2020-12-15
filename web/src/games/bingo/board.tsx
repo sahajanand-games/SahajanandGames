@@ -111,7 +111,7 @@ export class BingoBoard extends React.Component<IBoardProps, IBoardState> {
           }}
           onClick={this._shoutBingo}
         >
-          Bingo! {stars.join('')}
+          Shreeji! {stars.join('')}
         </Button>
       </div>
     );
@@ -142,7 +142,7 @@ export class BingoBoard extends React.Component<IBoardProps, IBoardState> {
             Sorry, you used up
           </tspan>
           <tspan x="50%" dy={msgLineHeight}>
-            all your Bingo! calls ☹️
+            all your Shreeji! calls ☹️
           </tspan>
           <tspan x="50%" dy={msgLineHeight * 2}>
             Better luck next time !
