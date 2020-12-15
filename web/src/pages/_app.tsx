@@ -22,8 +22,8 @@ import { WebSocketLink } from '@apollo/client/link/ws';
 import { ApolloProvider } from '@apollo/react-hooks';
 import AddressHelper from 'infra/common/helpers/AddressHelper';
 
-const GA_TRACKING_CODE = 'UA-105391878-2';
-const SENTRY_DSN = 'https://5957292e58cf4d2fbb781910e7b26b1f@o397015.ingest.sentry.io/5251165';
+const GA_TRACKING_CODE = 'UA-160612549-1';
+const SENTRY_DSN = 'https://XXXX@XXXX.ingest.sentry.io/XXXX';
 
 const httpLink = createHttpLink({
   uri: AddressHelper.getGraphQLServerAddress(),

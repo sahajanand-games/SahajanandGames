@@ -1,4 +1,4 @@
-domain: my-fbg.info
+domain: www.sahajanand-games.com
 
 replicas:
   web: 1

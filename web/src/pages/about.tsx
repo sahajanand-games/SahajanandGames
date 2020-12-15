@@ -24,7 +24,10 @@ export default () => {
           },
         ]}
       />
-      <SEO title={'About'} description={'About sahajanand-games.com, a free and open-source platform to play satsang related games.'} />
+      <SEO
+        title={'About'}
+        description={'About sahajanand-games.com, a free and open-source platform to play satsang related games.'}
+      />
       {getAboutCard()}
       {getContactCard()}
       {getContributorsCard()}
@@ -41,12 +44,14 @@ function getAboutCard() {
           About Sahajanad Games
         </Typography>
         <Typography component="p">
-          {'    '} Sahajanand Games is a platform for Satsangis to play satsang-related games. The aim of this project is to connect with Satsang in a new way. In future, we will continuously add new games and make our platform more
-          fun.
+          {'    '} Sahajanand Games is a platform for Satsangis to play satsang-related games. The aim of this project
+          is to connect with Satsang in a new way. In future, we will continuously add new games and make our platform
+          more fun.
           <br></br>
           <br></br>
-          {'    '} This project is Open Source and it is maintained by volunteer Satsangies, who do this to get the belssings of Shreeji Maharaj and great Saints. If you have any suggestion or would like to help us make new games,
-          you can always contact us via email or chat with us on Discord.
+          {'    '} This project is Open Source and it is maintained by volunteer Satsangies, who do this to get the
+          belssings of Shreeji Maharaj and great Saints. If you have any suggestion or would like to help us make new
+          games, you can always contact us via email or chat with us on Discord.
         </Typography>
       </CardContent>
     </Card>

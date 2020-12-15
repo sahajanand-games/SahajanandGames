@@ -1,13 +1,13 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 // import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import InfoIcon from '@material-ui/icons/Info';
+// import InfoIcon from '@material-ui/icons/Info';
 // import CodeIcon from '@material-ui/icons/Code';
 import Typography from '@material-ui/core/Typography';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { Link as MuiLink } from '@material-ui/core';
 
-class Header extends React.Component<{}, {}> {
+export default class Header extends React.Component<{}, {}> {
   render() {
     return (
       <div style={{ padding: '0 8px' }}>
@@ -36,6 +36,3 @@ class Header extends React.Component<{}, {}> {
     );
   }
 }
-
-
-export { Header };

@@ -1,5 +1,5 @@
 #!/bin/bash
-IMAGENAME=freeboardgames/web:latest
+IMAGENAME=shjgames/web:latest
 GIT_REV=`git rev-parse --short HEAD`
 export DOCKER_BUILDKIT=1
 docker build -f Dockerfile --progress=plain \
