@@ -23,6 +23,7 @@ export interface IGameState {
   callRef: number;
   timeRef: number;
   activePlayers: string[];
+  murtisRef: number[];
 }
 
 export interface IBoardState {

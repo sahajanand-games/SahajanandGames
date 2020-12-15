@@ -10,3 +10,4 @@ export const MAX_BACKOFF_CANDIDATES = 5;
 export const CALL_BOX_SIZE = 2;
 export const STROKE_WIDTH = 0.125 / GRID_SIZE;
 export const MAX_BINGO_CALLS = 3;
+export const NUM_MURTIS = 75;

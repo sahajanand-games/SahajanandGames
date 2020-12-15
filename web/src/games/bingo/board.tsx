@@ -123,6 +123,7 @@ export class BingoBoard extends React.Component<IBoardProps, IBoardState> {
       <PlayCard
         numbers={players[gameOver ? this.props.ctx.gameover.winner : this._getPlayerID()].numbers}
         onNumberClicked={gameOver ? () => {} : this._numberClicked}
+        murtisRef={this.props.G.murtisRef}
       />
     ) : null;
     // if player has no Bingo! shouts left, then show special message
@@ -166,7 +167,12 @@ export class BingoBoard extends React.Component<IBoardProps, IBoardState> {
           timeRef={timeRef}
           callOnTimeout={gameOver ? () => {} : this._callOnTimeout}
         />
-        <CallCard callQueue={callQueue} callRef={callRef} isSpectator={!this._isFirstPerson()} />
+        <CallCard
+          callQueue={callQueue}
+          callRef={callRef}
+          isSpectator={!this._isFirstPerson()}
+          murtisRef={this.props.G.murtisRef}
+        />
         {this.state.showCallTable ? <CallTable callQueue={callQueue} callRef={callRef} /> : playCard}
       </>
     );

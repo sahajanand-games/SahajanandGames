@@ -1,7 +1,15 @@
 import { Game } from 'boardgame.io';
 import { ActivePlayers, INVALID_MOVE } from 'boardgame.io/core';
 import { IGameState, INumberState } from './definitions';
-import { GRID_SIZE, COL_DELTA, WILDCARD_NUM, MAX_BINGO_CALLS, INITIAL_WAIT_REF_NUM, TIME_OUT } from './constants';
+import {
+  GRID_SIZE,
+  COL_DELTA,
+  WILDCARD_NUM,
+  MAX_BINGO_CALLS,
+  INITIAL_WAIT_REF_NUM,
+  TIME_OUT,
+  NUM_MURTIS,
+} from './constants';
 import { shuffleArray, inferActivePlayers } from './utils';
 
 export const BingoGame: Game<IGameState> = {
@@ -38,6 +46,7 @@ export const BingoGame: Game<IGameState> = {
       callRef: 0,
       timeRef: Date.now(),
       activePlayers: ['0', '1'],
+      murtisRef: shuffleArray(new Array(NUM_MURTIS).fill(0).map((_, idx) => idx)),
     };
   },
   moves: {
