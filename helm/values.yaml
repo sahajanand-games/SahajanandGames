@@ -1,4 +1,4 @@
-domain: www.sahajanand-games.com
+domain: sahajanand-games.com
 
 replicas:
   web: 1
