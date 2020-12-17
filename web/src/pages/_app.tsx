@@ -30,7 +30,7 @@ const httpLink = createHttpLink({
 });
 
 const isMainDomain =
-  typeof window !== 'undefined' && window.location.hostname.toLowerCase() === 'www.sahajanand-games.com';
+  typeof window !== 'undefined' && window.location.hostname.toLowerCase() === 'sahajanand-games.com';
 
 // SSR makes this error
 const wsLink = process.browser
