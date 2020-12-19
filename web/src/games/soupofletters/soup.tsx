@@ -95,12 +95,12 @@ export class Soup extends React.Component<ISoupProps, ISoupState> {
       }
     }
 
-    // // if developer wants to highlight start of word for debugging
-    // for (const sl of this.props.solution) {
-    //   if(sl.letters[0].x===x && sl.letters[0].y === y){
-    //       return 'green';
-    //   }
-    // }
+    // if developer wants to highlight start of word for debugging
+    for (const sl of this.props.solution) {
+      if(sl.letters[0].x===x && sl.letters[0].y === y){
+          return 'green';
+      }
+    }
 
     return 'black';
   }

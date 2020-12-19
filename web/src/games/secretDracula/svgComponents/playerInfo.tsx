@@ -3,6 +3,13 @@ import { grey } from '@material-ui/core/colors';
 import textCSS from './textStyles.module.css';
 import * as CNST from '../constants';
 
+const PROFILE_IMGS = {
+  [CNST.SY_DRACULA]: require('../media/kalidatt.png'),
+  [CNST.SY_VAMPIRE]: require('../media/kusangi.png'),
+} 
+// iterate over all villages and add their images 
+CNST.SY_HUMANS.forEach((v, i) => {PROFILE_IMGS[v] = require(`../media/satsaing_${i+1}.png`)})
+
 export interface IPlayerInfo {
   id: number;
   me: boolean;
@@ -97,6 +104,9 @@ export function PlayerInfo(props: IPlayerInfo) {
     showDracula = true;
     profilePic = CNST.SY_VAMPIRE;
   }
+  if(showDracula){
+    profilePic = CNST.SY_DRACULA;
+  }
 
   // setup additional symbols
   const symbols = [];
@@ -147,7 +157,7 @@ export function PlayerInfo(props: IPlayerInfo) {
         }}
       />
 
-      <text
+      {/* <text
         key={`sd_player_pic_${props.id}`}
         className={textCSS.noselect}
         x={xPos + boxWidth * 0.5}
@@ -158,22 +168,33 @@ export function PlayerInfo(props: IPlayerInfo) {
         style={profileStyle}
       >
         {profilePic}
-      </text>
+      </text> */}
 
-      {showDracula ? (
+      <image
+        key={`sd_player_img_${props.id}`}
+        x={xPos + boxWidth * 0.25}
+        y={yPos + boxHeight * 0.175 - (showDracula ? 0.3 : 0) }
+        width={boxWidth * 0.48}
+        height={boxWidth * 0.48 + (showDracula ? 0.6 : 0)}
+        href={PROFILE_IMGS[profilePic]}
+        transform={profileTranslate}
+        style={profileStyle}
+      />
+
+      {/* {showDracula ? (
         <text
           key={`sd_p_${props.id}_crone`}
           className={textCSS.noselect}
           x={xPos + boxWidth * 0.5}
-          y={yPos + boxHeight * 0.28}
-          fontSize={boxHeight * 0.18}
+          y={yPos + boxHeight * 0.25}
+          fontSize={boxHeight * 0.22}
           textAnchor="middle"
           transform={profileTranslate}
           style={profileStyle}
         >
           {CNST.SY_DRACULA}
         </text>
-      ) : null}
+      ) : null} */}
 
       <text
         key={`sd_pName_${props.id}`}
