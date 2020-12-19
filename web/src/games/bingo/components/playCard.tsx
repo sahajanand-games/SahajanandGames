@@ -1,4 +1,5 @@
 import * as React from 'react';
+import orange from '@material-ui/core/colors/orange';
 
 import { INumberState } from '../definitions';
 import { GRID_SIZE, CALL_BOX_SIZE, STROKE_WIDTH, WILDCARD_NUM } from '../constants';
@@ -49,8 +50,8 @@ function OneCard(props: IOneCardProps) {
         height={1 - 2 * boxMargin}
         rx={STROKE_WIDTH * cornerAdjustment}
         style={{
-          stroke: 'white',
-          strokeWidth: STROKE_WIDTH * (number.marked ? 0 : 1) * (isWildcard ? 0 : 1),
+          stroke: number.marked ? orange['600'] : 'white',
+          strokeWidth: STROKE_WIDTH * (isWildcard ? 0 : 1),
           fillOpacity: 0,
         }}
       />
