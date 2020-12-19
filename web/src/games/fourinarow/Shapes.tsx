@@ -58,6 +58,7 @@ export const FilledDisk = (props: IFilledDiskProps) => {
         style={animate}
       />
       <image
+        key={`filled_disk_image_${props.color}_${props.x}_${props.y}`}
         x={props.x + 0.11}
         y={(!props.showOnScreen ? 0 : 1 + props.y) - diskRadius * 2.1}
         width="0.78"
