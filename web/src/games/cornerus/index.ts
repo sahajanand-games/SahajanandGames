@@ -26,7 +26,7 @@ export const cornerusGameDef: IGameDef = {
     videoId: 'Yw8pK6Ak5oE',
     text: instructions,
   },
-  status: IGameStatus.PUBLISHED,
+  status: IGameStatus.IN_DEVELOPMENT,
   config: () => import('./config'),
   // aiConfig: () => import('./ai'),
 };

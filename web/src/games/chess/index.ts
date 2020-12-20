@@ -28,7 +28,7 @@ export const chessGameDef: IGameDef = {
     videoId: 'fKxG8KjH1Qg',
     text: instructions,
   },
-  status: IGameStatus.PUBLISHED,
+  status: IGameStatus.IN_DEVELOPMENT,
   config: () => import('./config'),
   aiConfig: () => import('./ai'),
 };

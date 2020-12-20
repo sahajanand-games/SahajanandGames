@@ -16,7 +16,7 @@ export const mergersGameDef: IGameDef = {
     videoId: 'AVoUPu5O1os',
     text: instructions,
   },
-  status: IGameStatus.PUBLISHED,
+  status: IGameStatus.IN_DEVELOPMENT,
   config: () => import('./config'),
 };
 

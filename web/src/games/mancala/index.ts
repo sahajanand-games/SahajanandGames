@@ -16,7 +16,7 @@ export const mancalaGameDef: IGameDef = {
     videoId: 'aLQX1TQjUbw',
     text: instructions,
   },
-  status: IGameStatus.PUBLISHED,
+  status: IGameStatus.IN_DEVELOPMENT,
   config: () => import('./config'),
 };
 

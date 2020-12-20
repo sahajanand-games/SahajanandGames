@@ -28,7 +28,7 @@ const ANIMALS = [
   'Kedarnath',
   'Badrinath',
   'Ayodhya',
-  'Chhapaiya'
+  'Chhapaiya',
 ];
 
 export interface GroupedRoomDisplay {

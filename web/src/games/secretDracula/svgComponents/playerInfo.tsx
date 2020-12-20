@@ -6,9 +6,11 @@ import * as CNST from '../constants';
 const PROFILE_IMGS = {
   [CNST.SY_DRACULA]: require('../media/kalidatt.png'),
   [CNST.SY_VAMPIRE]: require('../media/kusangi.png'),
-} 
-// iterate over all villages and add their images 
-CNST.SY_HUMANS.forEach((v, i) => {PROFILE_IMGS[v] = require(`../media/satsaing_${i+1}.png`)})
+};
+// iterate over all villages and add their images
+CNST.SY_HUMANS.forEach((v, i) => {
+  PROFILE_IMGS[v] = require(`../media/satsaing_${i + 1}.png`);
+});
 
 export interface IPlayerInfo {
   id: number;
@@ -104,7 +106,7 @@ export function PlayerInfo(props: IPlayerInfo) {
     showDracula = true;
     profilePic = CNST.SY_VAMPIRE;
   }
-  if(showDracula){
+  if (showDracula) {
     profilePic = CNST.SY_DRACULA;
   }
 
@@ -173,7 +175,7 @@ export function PlayerInfo(props: IPlayerInfo) {
       <image
         key={`sd_player_img_${props.id}`}
         x={xPos + boxWidth * 0.25}
-        y={yPos + boxHeight * 0.175 - (showDracula ? 0.3 : 0) }
+        y={yPos + boxHeight * 0.175 - (showDracula ? 0.3 : 0)}
         width={boxWidth * 0.48}
         height={boxWidth * 0.48 + (showDracula ? 0.6 : 0)}
         href={PROFILE_IMGS[profilePic]}

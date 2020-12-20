@@ -29,8 +29,7 @@ const httpLink = createHttpLink({
   uri: AddressHelper.getGraphQLServerAddress(),
 });
 
-const isMainDomain =
-  typeof window !== 'undefined' && window.location.hostname.toLowerCase() === 'sahajanand-games.com';
+const isMainDomain = typeof window !== 'undefined' && window.location.hostname.toLowerCase() === 'sahajanand-games.com';
 
 // SSR makes this error
 const wsLink = process.browser
@@ -77,10 +76,10 @@ class defaultApp extends App {
     if (!(window as any).GA_INITIALIZED && isMainDomain) {
       ReactGA.initialize(GA_TRACKING_CODE);
       (window as any).GA_INITIALIZED = true;
-      const version = process.env.VERSION;
-      const channel = process.env.CHANNEL;
-      let release;
-      if (version && channel) release = `${version}-${channel}`;
+      // const version = process.env.VERSION;
+      // const channel = process.env.CHANNEL;
+      // let release;
+      // if (version && channel) release = `${version}-${channel}`;
       // Sentry.init({ dsn: SENTRY_DSN, release });
     }
     // https://github.com/sergiodxa/next-ga/blob/32899e9635efe1491a5f47469b0bd2250e496f99/src/index.js#L32

@@ -16,7 +16,7 @@ export const zooParadeGameDef: IGameDef = {
     videoId: 'LQ8iwNjBW_s',
     text: instructions,
   },
-  status: IGameStatus.PUBLISHED,
+  status: IGameStatus.IN_DEVELOPMENT,
   config: () => import('./config'),
 };
 

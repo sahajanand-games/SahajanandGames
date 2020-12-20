@@ -17,7 +17,7 @@ export const checkersGameDef: IGameDef = {
     videoId: 'yFrAN-LFZRU',
     text: instructions,
   },
-  status: IGameStatus.PUBLISHED,
+  status: IGameStatus.IN_DEVELOPMENT,
   config: () => import('./config'),
   aiConfig: () => import('./ai'),
 };

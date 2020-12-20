@@ -17,7 +17,7 @@ export const estateBuyerGameDef: IGameDef = {
     videoId: 'OZ0RLgnBp6o',
     text: instructions,
   },
-  status: IGameStatus.PUBLISHED,
+  status: IGameStatus.IN_DEVELOPMENT,
   config: () => import('./config'),
 };
 

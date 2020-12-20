@@ -18,7 +18,7 @@ export const takesixGameDef: IGameDef = {
     videoId: 'fF0lnDygoes',
     text: instructions,
   },
-  status: IGameStatus.PUBLISHED,
+  status: IGameStatus.IN_DEVELOPMENT,
   config: () => import('./config'),
   aiConfig: () => import('./ai'),
 };
