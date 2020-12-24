@@ -17,14 +17,18 @@ const getCookiesBanner = () => {
   }
 
   return (
-    <CookieConsent cookieName="shjCookieConsent" buttonText="Agree" buttonStyle={{ background: '#00e676' }}>
+    <CookieConsent
+      cookieName="shjCookieConsent"
+      buttonText="Agree"
+      buttonStyle={{ background: '#43a047', color: 'white', padding: '8px 32px', fontSize: '16px' }}
+    >
       This website uses cookies to enhance the user experience. By continuing to use our website, you agree to the use
       of cookies.{' '}
       <span style={{ fontSize: '10px' }}>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.sahajanand-games.com/docs/"
+          href="https://www.sahajanand-games.com/docs/?path=/story/information-cookie-use--page"
           style={{ color: 'pink' }}
         >
           Read more
