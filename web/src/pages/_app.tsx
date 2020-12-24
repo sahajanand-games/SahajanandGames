@@ -21,6 +21,7 @@ import { getMainDefinition } from '@apollo/client/utilities';
 import { WebSocketLink } from '@apollo/client/link/ws';
 import { ApolloProvider } from '@apollo/react-hooks';
 import AddressHelper from 'infra/common/helpers/AddressHelper';
+import { getCookieConsentValue } from 'react-cookie-consent';
 
 const GA_TRACKING_CODE = 'UA-160612549-1';
 // const SENTRY_DSN = 'https://XXXX@XXXX.ingest.sentry.io/XXXX';
@@ -29,7 +30,8 @@ const httpLink = createHttpLink({
   uri: AddressHelper.getGraphQLServerAddress(),
 });
 
-const isMainDomain = typeof window !== 'undefined' && window.location.hostname.toLowerCase() === 'sahajanand-games.com';
+const isMainDomain =
+  typeof window !== 'undefined' && window.location.hostname.toLowerCase() === 'www.sahajanand-games.com';
 
 // SSR makes this error
 const wsLink = process.browser
@@ -74,13 +76,15 @@ class defaultApp extends App {
 
     // Initialize Google Analytics:
     if (!(window as any).GA_INITIALIZED && isMainDomain) {
-      ReactGA.initialize(GA_TRACKING_CODE);
-      (window as any).GA_INITIALIZED = true;
-      // const version = process.env.VERSION;
-      // const channel = process.env.CHANNEL;
-      // let release;
-      // if (version && channel) release = `${version}-${channel}`;
-      // Sentry.init({ dsn: SENTRY_DSN, release });
+      if (getCookieConsentValue('shjCookieConsent')) {
+        ReactGA.initialize(GA_TRACKING_CODE);
+        (window as any).GA_INITIALIZED = true;
+        // const version = process.env.VERSION;
+        // const channel = process.env.CHANNEL;
+        // let release;
+        // if (version && channel) release = `${version}-${channel}`;
+        // Sentry.init({ dsn: SENTRY_DSN, release });
+      }
     }
     // https://github.com/sergiodxa/next-ga/blob/32899e9635efe1491a5f47469b0bd2250e496f99/src/index.js#L32
     (Router as any).onRouteChangeComplete = (path: string) => {
@@ -97,8 +101,8 @@ class defaultApp extends App {
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="application-name" content="sahajanand-games.com" />
-          <meta name="apple-mobile-web-app-title" content="sahajanand-games.com" />
+          <meta name="application-name" content="www.sahajanand-games.com" />
+          <meta name="apple-mobile-web-app-title" content="www.sahajanand-games.com" />
           <meta name="theme-color" content="#3f51b5" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <meta name="msapplication-TileColor" content="#ffc40d" />

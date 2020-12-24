@@ -36,7 +36,7 @@ function isExcludedPath(path) {
   }
 }
 
-const DOMAIN = 'sahajanand-games.com';
+const DOMAIN = 'www.sahajanand-games.com';
 const URL = 'https://' + DOMAIN;
 
 function generateSiteMapXML(pagesManifest) {
@@ -153,6 +153,6 @@ app
 
 function isOfficialSite(rawHostname: string) {
   const hostname = rawHostname.toLowerCase();
-  const officialSite = hostname === DOMAIN || hostname.indexOf('sahajanand-games.com') >= 0;
+  const officialSite = hostname === DOMAIN || hostname.indexOf(DOMAIN) >= 0;
   return officialSite;
 }

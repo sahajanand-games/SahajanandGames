@@ -26,7 +26,7 @@ export default () => {
       />
       <SEO
         title={'About'}
-        description={'About sahajanand-games.com, a free and open-source platform to play satsang related games.'}
+        description={'About www.sahajanand-games.com, a free and open-source platform to play satsang related games.'}
       />
       {getAboutCard()}
       {getContactCard()}

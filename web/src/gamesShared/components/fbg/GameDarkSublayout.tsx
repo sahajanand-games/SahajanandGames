@@ -89,7 +89,7 @@ class GameDarkSublayoutInternal extends React.Component<IGameDarkSublayoutProps,
         >
           <Link href="/">
             <a style={{ textDecoration: 'none', display: 'flex' }}>
-              <img src={FbgLogo} alt="sahajanand-games.com" style={{ paddingRight: '16px' }} />
+              <img src={FbgLogo} alt="www.sahajanand-games.com" style={{ paddingRight: '16px' }} />
               {fbgTopLeftText}
             </a>
           </Link>

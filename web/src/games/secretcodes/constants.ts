@@ -35,7 +35,7 @@ export const words = [
   'Bhadra',
   'Fareni',
   'Idar Todla',
-  'Amrapur, Amreli',
+  'Amrapur',
   'Karyani',
   'Sarangpur',
   'Mangrol',

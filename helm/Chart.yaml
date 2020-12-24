@@ -1,6 +1,6 @@
 apiVersion: v2
 name: shjgames
-description: sahajanand-games.com helm chart
+description: www.sahajanand-games.com helm chart
 
 # A chart can be either an 'application' or a 'library' chart.
 #
