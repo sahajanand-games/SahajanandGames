@@ -24,6 +24,8 @@ export const SY_EXECUTE = '🗡️';
 export const SY_ELECT = '🗳️';
 export const SY_COFFIN = '⚰️';
 export const SY_DEAD = '🥀';
+export const SY_BAD_EXT = SY_BAD_PO + SY_VAMPIRE;
+export const SY_GOOD_EXT = SY_GOOD_PO + '🧑‍🤝‍🧑';
 
 // common names
 export const N_PRIEST = 'Sēvak ' + SY_PRIEST;
