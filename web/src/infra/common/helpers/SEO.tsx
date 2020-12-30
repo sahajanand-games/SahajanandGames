@@ -19,9 +19,9 @@ export default function SEO(props: NextSeoProps & SeoProps) {
   } else {
     let title = props.title;
     if (!props.title) {
-      title = `www.sahajanand-games.com`;
+      title = `sahajanand-games.com`;
     } else {
-      title += ` - www.sahajanand-games.com`;
+      title += ` - sahajanand-games.com`;
     }
     props = { ...props, title };
   }

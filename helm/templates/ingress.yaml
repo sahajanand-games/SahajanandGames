@@ -13,7 +13,7 @@ metadata:
   name: ingress
 spec:
   rules:
-  - host: www.{{ .Values.domain }}
+  - host: {{ .Values.domain }}
     http:
       paths:
       - backend:

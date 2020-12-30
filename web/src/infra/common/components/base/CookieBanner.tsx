@@ -47,7 +47,7 @@ class CookiesBanner extends React.Component<{}, ICookiesBannerState> {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.sahajanand-games.com/docs/?path=/story/information-cookie-use--page"
+              href="https://sahajanand-games.com/docs/?path=/story/information-cookie-use--page"
               style={{ color: 'pink' }}
             >
               Read more
