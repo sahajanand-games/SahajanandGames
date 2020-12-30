@@ -50,9 +50,9 @@ export class Board extends React.Component<IBoardProps, IBoardState> {
 
   _getPolicyText = (peek = false) => {
     if (peek) {
-      return this.props.G.policyPeek.map((p) => (p.garlic ? CNST.SY_GOOD_PO : CNST.SY_BAD_PO)).join(' ');
+      return this.props.G.policyPeek.map((p) => (p.garlic ? CNST.SY_GOOD_EXT : CNST.SY_BAD_EXT)).join(' ');
     } else {
-      return this.props.G.policyHand.map((p) => (p.garlic ? CNST.SY_GOOD_PO : CNST.SY_BAD_PO)).join(' ');
+      return this.props.G.policyHand.map((p) => (p.garlic ? CNST.SY_GOOD_EXT : CNST.SY_BAD_EXT)).join(' ');
     }
   };
 
@@ -506,7 +506,7 @@ export class Board extends React.Component<IBoardProps, IBoardState> {
         if (this._isActivePlayer() && intPlayerID === (priestPhase ? priestID : mayorID)) {
           this.props.G.policyHand.forEach((p, idx) => {
             interactions.push({
-              text: p.garlic ? CNST.SY_GOOD_PO : CNST.SY_BAD_PO,
+              text: p.garlic ? CNST.SY_GOOD_EXT : CNST.SY_BAD_EXT,
               onClick: () => {
                 if (priestPhase) {
                   this.props.moves.moveDiscardPriest(idx, intPlayerID);

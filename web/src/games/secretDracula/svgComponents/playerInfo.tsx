@@ -176,8 +176,8 @@ export function PlayerInfo(props: IPlayerInfo) {
         key={`sd_player_img_${props.id}`}
         x={xPos + boxWidth * 0.25}
         y={yPos + boxHeight * 0.175 - (showDracula ? 0.3 : 0)}
-        width={boxWidth * 0.48}
-        height={boxWidth * 0.48 + (showDracula ? 0.6 : 0)}
+        width={boxHeight * 0.48}
+        height={boxHeight * 0.48 + (showDracula ? 0.6 : 0)}
         href={PROFILE_IMGS[profilePic]}
         transform={profileTranslate}
         style={profileStyle}
