@@ -8,11 +8,12 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-origin: https://{{ .Values.domain }}
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
   generation: 1
   name: ingress
 spec:
   rules:
-  - host: {{ .Values.domain }}
+  - host: www.{{ .Values.domain }}
     http:
       paths:
       - backend:
@@ -33,6 +34,7 @@ spec:
   tls:
   - hosts:
     - {{ .Values.domain }}
+    - www.{{ .Values.domain }}
     secretName: tls-secret-{{ .Release.Name }}
 status:
   loadBalancer: {}

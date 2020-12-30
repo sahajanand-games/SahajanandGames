@@ -8,7 +8,7 @@ WORKDIR /appdata
 
 # install and cache app dependencies
 COPY --chown=appuser tsconfig.json package.json yarn.lock /appdata/
-RUN yarn install && yarn cache clean
+RUN yarn install --network-timeout=30000 && yarn cache clean
 
 # config
 COPY --chown=appuser tsconfig.server.json webpack.server.config.js /appdata/
@@ -33,7 +33,7 @@ USER appuser
 WORKDIR /appdata
 
 COPY --chown=appuser package.json /appdata/
-RUN yarn install --production && yarn cache clean
+RUN yarn install --production --network-timeout=30000 && yarn cache clean
 
 COPY --chown=appuser docker_run.sh /appdata/
 COPY --chown=appuser --from=builder  /appdata/public /appdata/public
