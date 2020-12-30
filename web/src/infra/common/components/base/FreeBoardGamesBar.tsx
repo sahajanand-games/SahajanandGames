@@ -2,41 +2,14 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import CookieConsent, { getCookieConsentValue } from 'react-cookie-consent';
 import FbgLogo from './media/fbg_logo_white_48.png';
 import Link from 'next/link';
+import CookieBanner from './CookieBanner';
 
 interface FBGBarProps {
   FEATURE_FLAG_readyForDesktopView?: boolean;
   toolbarContent?: React.ReactNode;
 }
-
-const getCookiesBanner = () => {
-  if (typeof window === 'undefined' || getCookieConsentValue('shjCookieConsent')) {
-    return null;
-  }
-
-  return (
-    <CookieConsent
-      cookieName="shjCookieConsent"
-      buttonText="Agree"
-      buttonStyle={{ background: '#43a047', color: 'white', padding: '8px 32px', fontSize: '16px' }}
-    >
-      This website uses cookies to enhance the user experience. By continuing to use our website, you agree to the use
-      of cookies.{' '}
-      <span style={{ fontSize: '10px' }}>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.sahajanand-games.com/docs/?path=/story/information-cookie-use--page"
-          style={{ color: 'pink' }}
-        >
-          Read more
-        </a>
-      </span>
-    </CookieConsent>
-  );
-};
 
 class FreeBoardGamesBar extends React.Component<FBGBarProps, {}> {
   render() {
@@ -75,7 +48,7 @@ class FreeBoardGamesBar extends React.Component<FBGBarProps, {}> {
           {this.props.children}
         </div>
 
-        {getCookiesBanner()}
+        <CookieBanner />
       </>
     );
   }

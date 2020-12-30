@@ -21,7 +21,6 @@ import { getMainDefinition } from '@apollo/client/utilities';
 import { WebSocketLink } from '@apollo/client/link/ws';
 import { ApolloProvider } from '@apollo/react-hooks';
 import AddressHelper from 'infra/common/helpers/AddressHelper';
-import { getCookieConsentValue } from 'react-cookie-consent';
 
 const GA_TRACKING_CODE = 'UA-160612549-1';
 // const SENTRY_DSN = 'https://XXXX@XXXX.ingest.sentry.io/XXXX';
@@ -76,7 +75,7 @@ class defaultApp extends App {
 
     // Initialize Google Analytics:
     if (!(window as any).GA_INITIALIZED && isMainDomain) {
-      if (getCookieConsentValue('shjCookieConsent')) {
+      if (localStorage.getItem('SHJ_COOKIE_CONSENT') === 'yes') {
         ReactGA.initialize(GA_TRACKING_CODE);
         (window as any).GA_INITIALIZED = true;
         // const version = process.env.VERSION;
