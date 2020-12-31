@@ -8,7 +8,7 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import AlertLayer from '../alert/AlertLayer';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const VALID_NICKNAME_REGEX = /^[A-Za-z0-9]*$/;
+const VALID_NICKNAME_REGEX = /^[A-Za-z0-9 ]*$/;
 
 interface Props {
   closePrompt?: () => void;
@@ -44,7 +44,7 @@ export class NicknamePrompt extends React.Component<Props, State> {
             onKeyPress={this._setNicknameOnEnterButton}
             helperText={errorText}
             error={!!errorText}
-            inputProps={{ maxLength: 15 }}
+            inputProps={{ maxLength: 30 }}
           />
         </div>
         <Button
