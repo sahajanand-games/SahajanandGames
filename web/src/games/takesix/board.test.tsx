@@ -9,6 +9,8 @@ import { Board } from './board';
 import { GameMode } from 'gamesShared/definitions/mode';
 import { Ctx } from 'boardgame.io';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 Enzyme.configure({ adapter: new Adapter() });
 
 const players = [

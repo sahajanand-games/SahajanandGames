@@ -4,6 +4,8 @@ import { Client } from 'boardgame.io/client';
 import { MancalaGame } from './game';
 import { GameMode } from 'gamesShared/definitions/mode';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 describe('mancala', () => {
   it('should render', () => {
     const client = Client({

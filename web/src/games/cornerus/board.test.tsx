@@ -9,6 +9,8 @@ import { Board } from './board';
 import { GameMode } from 'gamesShared/definitions/mode';
 import blue from '@material-ui/core/colors/blue';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 Enzyme.configure({ adapter: new Adapter() });
 
 const players = [

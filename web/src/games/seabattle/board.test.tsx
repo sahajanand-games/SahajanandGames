@@ -7,6 +7,8 @@ import { GameMode } from 'gamesShared/definitions/mode';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 Enzyme.configure({ adapter: new Adapter() });
 
 const BoardTest = (props: any) => (

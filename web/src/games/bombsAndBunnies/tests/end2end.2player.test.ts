@@ -5,6 +5,8 @@ import { Local } from 'boardgame.io/multiplayer';
 import { _ClientImpl } from 'boardgame.io/dist/types/src/client/client';
 import * as Utilities from './utilities';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 let _matchId = 0;
 
 function setup(): _ClientImpl<any>[] {

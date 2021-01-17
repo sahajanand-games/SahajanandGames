@@ -3,6 +3,8 @@ import { Local } from 'boardgame.io/multiplayer';
 import { CardTableGame } from './game';
 import { cardEnum } from './deals';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 describe('deck moves', () => {
   test('cutDeck(1) should rotate deck by one card', () => {
     let client = Client({ game: { ...CardTableGame, seed: 327 }, playerID: '0', multiplayer: Local() });

@@ -39,7 +39,7 @@ describe('UsersService', () => {
   });
 
   it('should throw error for long nickname', async () => {
-    const nickname = '0123456789012345';
+    const nickname = '0123456789012345012345678901234501234567890123450123456789012345';
     const newUserId = service.newUser({ nickname });
     await expect(newUserId).rejects.toThrow();
   });

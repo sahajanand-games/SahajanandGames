@@ -6,6 +6,8 @@ import { CardTableGame, phaseEnum, playerEnum, stageEnum } from './game';
 import { Client } from 'boardgame.io/client';
 import { cardEnum } from './deals';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 // mock functions for HTMLMediaElement
 // https://github.com/jsdom/jsdom/issues/2155#issuecomment-366703395
 (window as any).HTMLMediaElement.prototype.load = () => {

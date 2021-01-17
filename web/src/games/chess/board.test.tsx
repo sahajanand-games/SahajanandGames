@@ -6,6 +6,8 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import { GameMode } from 'gamesShared/definitions/mode';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 Enzyme.configure({ adapter: new Adapter() });
 jest.mock('react-ga');
 

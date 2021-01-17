@@ -8,6 +8,8 @@ import { CheckersGame } from './game';
 import { Board } from './board';
 import { GameMode } from 'gamesShared/definitions/mode';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 Enzyme.configure({ adapter: new Adapter() });
 
 const BoardTest = (props: any) => (

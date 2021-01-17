@@ -2,6 +2,8 @@ import { Client } from 'boardgame.io/client';
 import { BullsAndCowsGame } from './game';
 import { checkSecret, generateSecret, isVictory, isGameOver } from './service';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 jest.mock('./service', () => ({
   ...jest.requireActual('./service'),
   checkSecret: jest.fn(),

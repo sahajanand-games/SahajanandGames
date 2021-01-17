@@ -7,6 +7,8 @@ import { GameMode } from 'gamesShared/definitions/mode';
 import { TictactoeGame } from './game';
 import { Client } from 'boardgame.io/client';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 Enzyme.configure({ adapter: new Adapter() });
 
 test('clicking a cell on the board', () => {

@@ -33,7 +33,7 @@ describe('Rota UI', () => {
   });
 
   it('Checks if Game starts with RED in the PLACE phase', () => {
-    expect(wrapper.text()).toContain(`[${localPlayerNames['0'].toUpperCase()}] PLACE PIECE`);
+    expect(wrapper.text()).toContain(`PLACE SHREEJI`);
   });
 
   it('Checks if placePiece is being called', () => {
@@ -86,7 +86,7 @@ describe('Rota UI', () => {
       updateGameProps();
     });
 
-    expect(wrapper.text()).toContain(`[${localPlayerNames['0'].toUpperCase()}] MOVE PIECE`);
+    expect(wrapper.text()).toContain(`MOVE SHREEJI`);
   });
 
   describe('online-specific tests', () => {
@@ -100,7 +100,7 @@ describe('Rota UI', () => {
     });
 
     it("clicks a piece-holder when it's our turn", () => {
-      expect(wrapper.text()).toContain('PLACE PIECE');
+      expect(wrapper.text()).toContain('PLACE SHREEJI');
 
       const pieceHolder = wrapper.find(`[data-testid="rota_piece_holder_test_id_0"]`).at(0);
       pieceHolder.simulate('click');

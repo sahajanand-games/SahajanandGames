@@ -5,6 +5,8 @@ import CribbageBoardB from './CribbageBoardB';
 import { CardTableGame } from './game';
 import { Client } from 'boardgame.io/client';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 // mock functions for HTMLMediaElement
 // https://github.com/jsdom/jsdom/issues/2155#issuecomment-366703395
 (window as any).HTMLMediaElement.prototype.load = () => {

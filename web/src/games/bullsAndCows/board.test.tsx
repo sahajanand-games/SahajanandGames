@@ -8,6 +8,8 @@ import { GameMode } from 'gamesShared/definitions/mode';
 
 import Secret from './components/Secret';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 Enzyme.configure({ adapter: new Adapter() });
 
 const setup = (ctx: any = {}) => {

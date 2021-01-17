@@ -1,5 +1,7 @@
 import { generateSecret, checkSecret, isVictory, isGameOver } from './service';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 describe('Bulls and Cows Service', () => {
   describe('generateSecret', () => {
     const ctx: any = {

@@ -7,6 +7,8 @@ import { BombsAndBunniesGame } from '../game';
 import { BgioBoard } from '../board';
 import { GameMode } from 'gamesShared/definitions/mode';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 Enzyme.configure({ adapter: new Adapter() });
 
 test('game start', async () => {

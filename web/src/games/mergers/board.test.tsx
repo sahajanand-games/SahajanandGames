@@ -10,6 +10,8 @@ import { Chain } from './types';
 import { setupInitialState } from './utils';
 import { Ctx } from 'boardgame.io';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 Enzyme.configure({ adapter: new Adapter() });
 
 const DEFAULT_CTX: Ctx = {

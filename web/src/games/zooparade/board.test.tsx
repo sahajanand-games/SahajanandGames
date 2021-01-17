@@ -4,6 +4,8 @@ import { Client } from 'boardgame.io/client';
 import { ZooParadeGame } from './game';
 import { GameMode } from 'gamesShared/definitions/mode';
 
+it.only('SHJ_IGNORE_GAME_TEST', () => {});
+
 describe('zooparade', () => {
   it('should render', () => {
     const client = Client({
