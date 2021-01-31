@@ -125,6 +125,4 @@ interface PredefinedWords {
   words: string[];
 }
 
-export const PREDEFINED_WORDS: PredefinedWords[] = [
-  { label: 'General Satsang Words', words: GENERAL_WORDS }
-];
+export const PREDEFINED_WORDS: PredefinedWords[] = [{ label: 'General Satsang Words', words: GENERAL_WORDS }];
