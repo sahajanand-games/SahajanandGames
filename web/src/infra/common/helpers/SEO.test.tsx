@@ -20,13 +20,13 @@ it('renders without props', () => {
   const props = mockedNextSeo.mock.calls[0][0];
   expect(props.noindex).toBeTruthy();
   expect(props.nofollow).toBeTruthy();
-  expect(props.title).toEqual('FreeBoardGames.org');
+  expect(props.title).toEqual('sahajanand-games.com');
 });
 
 it('should append to title', () => {
   Enzyme.mount(<SEO title={'foo'} />);
   const props = mockedNextSeo.mock.calls[0][0];
-  expect(props.title).toEqual('foo - FreeBoardGames.org');
+  expect(props.title).toEqual('foo - sahajanand-games.com');
 });
 
 it('should override title', () => {
