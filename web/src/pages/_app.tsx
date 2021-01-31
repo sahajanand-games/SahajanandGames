@@ -29,8 +29,7 @@ const httpLink = createHttpLink({
   uri: AddressHelper.getGraphQLServerAddress(),
 });
 
-const isMainDomain =
-  typeof window !== 'undefined' && window.location.hostname.toLowerCase() === 'sahajanand-games.com';
+const isMainDomain = typeof window !== 'undefined' && window.location.hostname.toLowerCase() === 'sahajanand-games.com';
 
 // SSR makes this error
 const wsLink = process.browser
