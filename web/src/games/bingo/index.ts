@@ -7,6 +7,7 @@ export const BingoDef: IGameDef = {
   code: 'bingo',
   urlName: 'shreeji-darshan',
   name: 'Shreeji Darshan',
+  contributors: ['gk-patel'],
   minPlayers: 2,
   maxPlayers: 30,
   imageURL: Thumbnail,

@@ -7,6 +7,7 @@ export const rotaGameDef: IGameDef = {
   urlName: 'rass',
   code: 'rota',
   name: 'Rass',
+  contributors: ['gk-patel'],
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }, { mode: GameMode.LocalFriend }],
   minPlayers: 2,

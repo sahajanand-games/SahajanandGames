@@ -7,6 +7,7 @@ export const secretcodesGameDef: IGameDef = {
   urlName: 'shreejis-secret',
   code: 'secretcodes',
   name: "Shreeji's Secret",
+  contributors: ['JvSomeren', 'mateusazis'],
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.LocalFriend }, { mode: GameMode.OnlineFriend }],
   minPlayers: 4,
@@ -21,6 +22,7 @@ export const secretcodesGameDef: IGameDef = {
   },
   status: IGameStatus.PUBLISHED,
   config: () => import('./config'),
+  customization: () => import('./customization'),
 };
 
 export default secretcodesGameDef;

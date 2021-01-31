@@ -7,6 +7,7 @@ export const memoryMatchDef: IGameDef = {
   code: 'memorymatch',
   name: 'Hari Smruti',
   urlName: 'hari-smruti',
+  contributors: ['gk-patel'],
   minPlayers: 2,
   maxPlayers: 2,
   imageURL: Thumbnail,

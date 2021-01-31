@@ -26,11 +26,7 @@ very important for the user. An example of this is the difficulty level of AI:
 
 In order to keep a consistent user experience across games, **all quick customizations MUST fit in the same line as the play button.**
 
-**STILL IN DEVELOPMENT: Only working for AI**
-
 ### Full Customization
-
-**STILL IN DEVELOPMENT**
 
 Full customization are dialogs that are rendered when the user clicks on the "gear" icon on 
 the game card on the game page or on lobby.
@@ -98,6 +94,7 @@ export const FooBarGame = {
   name: 'foobar',
 
   setup: (ctx, customData: GameCustomizationState)) => { // <--
+<<<<<<< HEAD
     return doSomethingWith(customData) 
   },
 ```
@@ -120,6 +117,13 @@ export class Board extends React.Component<IBoardProps, {}> {
 
 (**the above interfaces are still not implemented**)
 
+=======
+    const fullCustomization = (customData?.full as FullCustomizationState) || DEFAULT_FULL_CUSTOMIZATION;
+    return doSomethingWith(fullCustomization.words) 
+  },
+```
+
+>>>>>>> upstream/master
 On AI mode, the customization values are also going to be available when creating the AI bot:
 
 ```typescript

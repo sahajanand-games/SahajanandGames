@@ -7,6 +7,7 @@ export const tictactoeplusGameDef: IGameDef = {
   urlName: 'tictactoe',
   code: 'tictactoeplus',
   name: 'Tic-Tac-Toe',
+  contributors: ['gk-patel'],
   minPlayers: 2,
   maxPlayers: 2,
   imageURL: Thumbnail,

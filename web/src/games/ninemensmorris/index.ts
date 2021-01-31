@@ -7,6 +7,7 @@ export const ninemensmorrisGameDef: IGameDef = {
   urlName: 'tri-murti',
   code: 'ninemensmorris',
   name: 'Tri-Murti',
+  contributors: ['JosefKuchar'],
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }, { mode: GameMode.LocalFriend }],
   minPlayers: 2,

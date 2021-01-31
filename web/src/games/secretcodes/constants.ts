@@ -1,4 +1,4 @@
-export const words = [
+export const GENERAL_WORDS = [
   'Sahajanand',
   'Harikrushna',
   'Nilkanth',
@@ -118,4 +118,13 @@ export const words = [
   'Bhim',
   'Yudhisthir',
   'Nakul',
+];
+
+interface PredefinedWords {
+  label: string;
+  words: string[];
+}
+
+export const PREDEFINED_WORDS: PredefinedWords[] = [
+  { label: 'General Words', words: GENERAL_WORDS }
 ];

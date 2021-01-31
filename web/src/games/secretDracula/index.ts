@@ -7,6 +7,7 @@ export const secretDraculaGameDef: IGameDef = {
   urlName: 'secret-kusang',
   code: 'secretDracula',
   name: 'Secret Kusang',
+  contributors: ['Spooky-0'],
   imageURL: Thumbnail,
   modes: [
     { mode: GameMode.OnlineFriend },

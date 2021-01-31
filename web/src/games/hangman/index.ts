@@ -7,6 +7,7 @@ export const hangmanGameDef: IGameDef = {
   urlName: 'guess-the-word',
   code: 'hangman',
   name: 'Guess the Word',
+  contributors: ['gk-patel'],
   minPlayers: 2,
   maxPlayers: 2,
   imageURL: Thumbnail,
