@@ -12,8 +12,8 @@ import Breadcrumbs from 'infra/common/helpers/Breadcrumbs';
 import { useRouter } from 'next/router';
 import { GAMES_LIST } from 'games';
 import { IGameStatus } from 'gamesShared/definitions/game';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
+// import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+// import Avatar from '@material-ui/core/Avatar';
 
 const About = () => {
   const router = useRouter();
@@ -63,33 +63,33 @@ function getAboutCard() {
   );
 }
 
-function getContributorToGames(): { [contributor: string]: string[] } {
-  let result = {};
-  for (const game of GAMES_LIST) {
-    if (game.status != IGameStatus.PUBLISHED) {
-      continue;
-    }
-    for (const contributor of game.contributors) {
-      result = {
-        ...result,
-        [contributor]: [...(result[contributor] || []), game.name],
-      };
-    }
-  }
-  return result;
-}
+// function getContributorToGames(): { [contributor: string]: string[] } {
+//   let result = {};
+//   for (const game of GAMES_LIST) {
+//     if (game.status != IGameStatus.PUBLISHED) {
+//       continue;
+//     }
+//     for (const contributor of game.contributors) {
+//       result = {
+//         ...result,
+//         [contributor]: [...(result[contributor] || []), game.name],
+//       };
+//     }
+//   }
+//   return result;
+// }
 
-function compare(a, b) {
-  const initialA = a.toUpperCase();
-  const initialB = b.toUpperCase();
+// function compare(a, b) {
+//   const initialA = a.toUpperCase();
+//   const initialB = b.toUpperCase();
 
-  if (initialA > initialB) {
-    return 1;
-  } else if (initialA < initialB) {
-    return -1;
-  }
-  return 0;
-}
+//   if (initialA > initialB) {
+//     return 1;
+//   } else if (initialA < initialB) {
+//     return -1;
+//   }
+//   return 0;
+// }
 
 function getContactCard() {
   // const contributorsToGames = getContributorToGames();

@@ -12,7 +12,7 @@ import { Typography } from '@material-ui/core';
 import ReactMarkdown from 'react-markdown';
 import { GameInstructionsText } from 'infra/gameInfo/GameInstructionsText';
 import Breadcrumbs from 'infra/common/helpers/Breadcrumbs';
-import { GameContributors } from './GameContributors';
+// import { GameContributors } from './GameContributors';
 
 interface gameInfoProps {
   gameCode: string;
