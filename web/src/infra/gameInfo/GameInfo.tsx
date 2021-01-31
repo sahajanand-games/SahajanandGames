@@ -54,7 +54,7 @@ class GameInfo extends React.Component<gameInfoProps, {}> {
               <Typography variant="h4" component="h1">
                 Play {gameDef.name}
               </Typography>
-              <GameContributors game={gameDef} />
+              {/* <GameContributors game={gameDef} /> */}
               <GameModePicker gameDef={gameDef} />
             </div>
             <div style={{ flex: '55%', padding: '8px' }}>
@@ -74,7 +74,7 @@ class GameInfo extends React.Component<gameInfoProps, {}> {
             <Typography variant="h5" component="h1">
               Play {gameDef.name}
             </Typography>
-            <GameContributors game={gameDef} />
+            {/* <GameContributors game={gameDef} /> */}
             <GameModePicker gameDef={gameDef} />
             {videoInstructions}
             {textInstructions}
