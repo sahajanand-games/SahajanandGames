@@ -1,28 +1,100 @@
-version: '3.7'
+version: '3.3'
 
 services:
+
   web:
     build:
       context: web
       dockerfile: Dockerfile
     image: shjgames/web
-    ports:
-      - '3000:3000'
+    # ports:
+    #   - '3000:3000'
     environment:
       SERVER_TYPE: 'WEB'
+      FBG_BACKEND_TARGET: 'http://backend:3001'
+    networks: 
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fbg-web.rule=Host(`www.shj-games.test`)"
+      - "traefik.http.routers.fbg-web.entrypoints=web-secure"
+      - "traefik.http.routers.fbg-web.tls=true"
+      - "traefik.http.routers.fbg-web.service=fbg-web"
+      - "traefik.http.services.fbg-web.loadbalancer.server.port=3000"
+      # apply redirect from non-www to www
+      - "traefik.http.middlewares.www-redirect.redirectregex.regex=^https://shj-games.test/(.*)"
+      - "traefik.http.middlewares.www-redirect.redirectregex.replacement=https://www.shj-games.test/$${1}"
+      - "traefik.http.middlewares.www-redirect.redirectregex.permanent=true"
+      - "traefik.http.routers.www-redirect.rule=Host(`shj-games.test`)"
+      - "traefik.http.routers.www-redirect.entrypoints=web-secure"
+      - "traefik.http.routers.www-redirect.middlewares=www-redirect"
+      - "traefik.http.routers.www-redirect.tls=true"
+  
   bgio:
     build:
       context: web
       dockerfile: Dockerfile
     image: shjgames/web
-    ports:
-      - '8001:8001'
     environment:
       SERVER_TYPE: 'BGIO'
+      BGIO_PORT: 8001
+    # ports:
+    #   - '8001:8001'
+    networks: 
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fbg-bgio.rule=Host(`www.shj-games.test`) && Path(`/socket.io/`)"
+      - "traefik.http.routers.fbg-bgio.entrypoints=web-secure"
+      - "traefik.http.routers.fbg-bgio.tls=true"
+      - "traefik.http.routers.fbg-bgio.service=fbg-bgio"
+      - "traefik.http.services.fbg-bgio.loadbalancer.server.port=8001"
+  
   backend:
     build:
       context: fbg-server
       dockerfile: Dockerfile
     image: shjgames/fbg-server
+    environment: 
+      BGIO_PUBLIC_SERVERS: 'https://www.shj-games.test'
+      BGIO_PRIVATE_SERVERS: 'http://bgio:8001'
+      JWT_SECRET: 'SomethingVerySecret'
+    # ports:
+    #   - '3001:3001'
+    networks: 
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fbg-backend.rule=Host(`www.shj-games.test`) && Path(`/graphql`)"
+      - "traefik.http.routers.fbg-backend.entrypoints=web-secure"
+      - "traefik.http.routers.fbg-backend.tls=true"
+      - "traefik.http.routers.fbg-backend.service=fbg-backend"
+      - "traefik.http.services.fbg-backend.loadbalancer.server.port=3001"
+
+  traefik:
+    image: "traefik:v2.4"
+    container_name: "traefik"
+    command:
+      - "--api.insecure=false"
+      - "--providers.docker=true"
+      # - "--providers.docker.swarmMode=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=traefik_network"
+      - "--entrypoints.web-insecure.address=:80"
+      - "--entrypoints.web-insecure.http.redirections.entrypoint.to=web-secure"
+      - "--entrypoints.web-insecure.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.web-secure.address=:443"
+      - "--accesslog"
     ports:
-      - '3001:3001'
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    networks: 
+      - traefik_network
+
+networks:
+  traefik_network:
+    external: true
+
