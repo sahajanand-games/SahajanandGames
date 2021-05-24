@@ -33,16 +33,16 @@ services:
     deploy: 
       labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.fbg-web.rule=Host(`test1.sahajanand-games.de`)"
+      - "traefik.http.routers.fbg-web.rule=Host(`test1.sahajanand-games.com`)"
       - "traefik.http.routers.fbg-web.entrypoints=web-secure"
       - "traefik.http.routers.fbg-web.tls=true"
       - "traefik.http.routers.fbg-web.service=fbg-web"
       - "traefik.http.services.fbg-web.loadbalancer.server.port=3000"
       # apply redirect from non-www to www
-      - "traefik.http.middlewares.www-redirect.redirectregex.regex=^https://www.test1.sahajanand-games.de/(.*)"
-      - "traefik.http.middlewares.www-redirect.redirectregex.replacement=https://test1.sahajanand-games.de/$${1}"
+      - "traefik.http.middlewares.www-redirect.redirectregex.regex=^https://www.test1.sahajanand-games.com/(.*)"
+      - "traefik.http.middlewares.www-redirect.redirectregex.replacement=https://test1.sahajanand-games.com/$${1}"
       - "traefik.http.middlewares.www-redirect.redirectregex.permanent=true"
-      - "traefik.http.routers.www-redirect.rule=Host(`www.test1.sahajanand-games.de`)"
+      - "traefik.http.routers.www-redirect.rule=Host(`www.test1.sahajanand-games.com`)"
       - "traefik.http.routers.www-redirect.entrypoints=web-secure"
       - "traefik.http.routers.www-redirect.middlewares=www-redirect"
       - "traefik.http.routers.www-redirect.tls=true"
@@ -61,7 +61,7 @@ services:
     deploy: 
       labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.fbg-bgio.rule=Host(`test1.sahajanand-games.de`) && Path(`/socket.io/`)"
+      - "traefik.http.routers.fbg-bgio.rule=Host(`test1.sahajanand-games.com`) && Path(`/socket.io/`)"
       - "traefik.http.routers.fbg-bgio.entrypoints=web-secure"
       - "traefik.http.routers.fbg-bgio.tls=true"
       - "traefik.http.routers.fbg-bgio.service=fbg-bgio"
@@ -71,7 +71,7 @@ services:
     <<: *default-opts
     image: shjgames/fbg-server
     environment: 
-      BGIO_PUBLIC_SERVERS: 'https://test1.sahajanand-games.de'
+      BGIO_PUBLIC_SERVERS: 'https://test1.sahajanand-games.com'
       BGIO_PRIVATE_SERVERS: 'http://bgio:8001'
       JWT_SECRET: 'SomethingVerySecret'
       POSTGRES_URL: postgresql://DB_USER:DB_PASS@postgres-db:5432/FBG_DB
@@ -82,7 +82,7 @@ services:
     deploy: 
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.fbg-backend.rule=Host(`test1.sahajanand-games.de`) && Path(`/graphql`)"
+        - "traefik.http.routers.fbg-backend.rule=Host(`test1.sahajanand-games.com`) && Path(`/graphql`)"
         - "traefik.http.routers.fbg-backend.entrypoints=web-secure"
         - "traefik.http.routers.fbg-backend.tls=true"
         - "traefik.http.routers.fbg-backend.service=fbg-backend"
