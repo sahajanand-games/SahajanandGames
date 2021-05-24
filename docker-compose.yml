@@ -11,7 +11,6 @@ services:
   postgres-db:
     <<: *default-opts
     image: postgres:13.3-alpine
-    restart: always
     environment:
       POSTGRES_PASSWORD: DB_PASS
       POSTGRES_USER: DB_USER
@@ -92,7 +91,6 @@ services:
   traefik:
     <<: *default-opts
     image: "traefik:v2.4"
-    container_name: "traefik"
     command:
       - "--api.insecure=false"
       - "--providers.docker=true"
