@@ -35,7 +35,7 @@ if [[ "$(docker network ls | grep "traefik_network")" == "" ]] ; then
     docker network create -d overlay -o encrypted=true traefik_network
 fi
 
-export DOMAIN=test2.sahajanand-games.com
+export DOMAIN=sahajanand-games.com
 export LE_EMAIL=sahajanand-games@gmail.com
 
 
