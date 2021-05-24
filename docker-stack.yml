@@ -71,8 +71,7 @@ services:
         - "traefik.http.services.fbg-bgio.loadbalancer.server.port=8001"
         # SSL Config
         - "traefik.http.routers.fbg-bgio.tls.certresolver=letsencryptresolver"
-    
-  
+
   backend:
     <<: *default-opts
     image: shjgames/fbg-server
@@ -96,44 +95,6 @@ services:
         # SSL Config
         - "traefik.http.routers.fbg-backend.tls.certresolver=letsencryptresolver"
 
-  traefik:
-    <<: *default-opts
-    image: "traefik:v2.4"
-    command:
-      - "--api.insecure=false"
-      - "--providers.docker=true"
-      - "--providers.docker.endPoint=http://dockersocket:2375"
-      - "--providers.docker.swarmMode=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--providers.docker.network=traefik_network"
-      - "--entrypoints.web-insecure.address=:80"
-      - "--entrypoints.web-insecure.http.redirections.entrypoint.to=web-secure"
-      - "--entrypoints.web-insecure.http.redirections.entrypoint.scheme=https"
-      - "--entrypoints.web-secure.address=:443"
-      # SSL configuration
-      - "--certificatesresolvers.letsencryptresolver.acme.httpchallenge=true"
-      - "--certificatesresolvers.letsencryptresolver.acme.httpchallenge.entrypoint=web-insecure"
-      - "--certificatesresolvers.letsencryptresolver.acme.email=${LE_EMAIL}"
-      - "--certificatesresolvers.letsencryptresolver.acme.storage=/letsencrypt/acme.json"
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - traefik-certs:/letsencrypt
-    networks: 
-      - traefik_network
-
-  dockersocket:
-    <<: *default-opts
-    image: tecnativa/docker-socket-proxy
-    networks:
-      - traefik_network
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      NETWORKS: 1
-      SERVICES: 1
-      TASKS: 1
 
 networks:
   traefik_network:
@@ -141,6 +102,4 @@ networks:
 
 volumes: 
   fbg-postgres-db: 
-    external: true
-  traefik-certs: 
     external: true

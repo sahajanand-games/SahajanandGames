@@ -39,4 +39,8 @@ export DOMAIN=test2.sahajanand-games.com
 export LE_EMAIL=sahajanand-games@gmail.com
 
 
-docker stack deploy -c docker-compose.yml shj_game
+if [[ "$1" == "proxy" ]]; then
+    docker stack deploy -c docker-proxy.yml shj_game_proxy
+fi
+
+docker stack deploy -c docker-stack.yml shj_game_stack
