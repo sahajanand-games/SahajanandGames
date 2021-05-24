@@ -74,7 +74,7 @@ class defaultApp extends App {
 
     // Initialize Google Analytics:
     if (!(window as any).GA_INITIALIZED && isMainDomain) {
-      if (localStorage.getItem('SHJ_COOKIE_CONSENT') === 'yes') {
+      // if (localStorage.getItem('SHJ_COOKIE_CONSENT') === 'yes') {
         ReactGA.initialize(GA_TRACKING_CODE);
         (window as any).GA_INITIALIZED = true;
         // const version = process.env.VERSION;
@@ -82,7 +82,7 @@ class defaultApp extends App {
         // let release;
         // if (version && channel) release = `${version}-${channel}`;
         // Sentry.init({ dsn: SENTRY_DSN, release });
-      }
+      // }
     }
     // https://github.com/sergiodxa/next-ga/blob/32899e9635efe1491a5f47469b0bd2250e496f99/src/index.js#L32
     (Router as any).onRouteChangeComplete = (path: string) => {
