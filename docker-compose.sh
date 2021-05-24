@@ -27,8 +27,16 @@ if [[ "$(docker volume ls | grep "fbg-postgres-db")" == "" ]] ; then
     docker volume create fbg-postgres-db
 fi
 
+if [[ "$(docker volume ls | grep "traefik-certs")" == "" ]] ; then
+    docker volume create traefik-certs
+fi
+
 if [[ "$(docker network ls | grep "traefik_network")" == "" ]] ; then
     docker network create -d overlay -o encrypted=true traefik_network
 fi
+
+export DOMAIN=test2.sahajanand-games.com
+export LE_EMAIL=sahajanand-games@gmail.com
+
 
 docker stack deploy -c docker-compose.yml shj_game

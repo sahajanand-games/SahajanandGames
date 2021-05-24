@@ -32,21 +32,24 @@ services:
       - traefik_network
     deploy: 
       labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.fbg-web.rule=Host(`test1.sahajanand-games.com`)"
-      - "traefik.http.routers.fbg-web.entrypoints=web-secure"
-      - "traefik.http.routers.fbg-web.tls=true"
-      - "traefik.http.routers.fbg-web.service=fbg-web"
-      - "traefik.http.services.fbg-web.loadbalancer.server.port=3000"
-      # apply redirect from non-www to www
-      - "traefik.http.middlewares.www-redirect.redirectregex.regex=^https://www.test1.sahajanand-games.com/(.*)"
-      - "traefik.http.middlewares.www-redirect.redirectregex.replacement=https://test1.sahajanand-games.com/$${1}"
-      - "traefik.http.middlewares.www-redirect.redirectregex.permanent=true"
-      - "traefik.http.routers.www-redirect.rule=Host(`www.test1.sahajanand-games.com`)"
-      - "traefik.http.routers.www-redirect.entrypoints=web-secure"
-      - "traefik.http.routers.www-redirect.middlewares=www-redirect"
-      - "traefik.http.routers.www-redirect.tls=true"
-  
+        - "traefik.enable=true"
+        - "traefik.http.routers.fbg-web.rule=Host(`${DOMAIN}`)"
+        - "traefik.http.routers.fbg-web.entrypoints=web-secure"
+        - "traefik.http.routers.fbg-web.tls=true"
+        - "traefik.http.routers.fbg-web.service=fbg-web"
+        - "traefik.http.services.fbg-web.loadbalancer.server.port=3000"
+        # apply redirect from non-www to www
+        - "traefik.http.middlewares.www-redirect.redirectregex.regex=^https://www.${DOMAIN}/(.*)"
+        - "traefik.http.middlewares.www-redirect.redirectregex.replacement=https://${DOMAIN}/$${1}"
+        - "traefik.http.middlewares.www-redirect.redirectregex.permanent=true"
+        - "traefik.http.routers.www-redirect.rule=Host(`www.${DOMAIN}`)"
+        - "traefik.http.routers.www-redirect.entrypoints=web-secure"
+        - "traefik.http.routers.www-redirect.middlewares=www-redirect"
+        - "traefik.http.routers.www-redirect.tls=true"
+        # SSL Config
+        - "traefik.http.routers.fbg-web.tls.certresolver=letsencryptresolver"
+        - "traefik.http.routers.www-redirect.tls.certresolver=letsencryptresolver"
+    
   bgio:
     <<: *default-opts
     image: shjgames/web
@@ -60,18 +63,21 @@ services:
       - traefik_network
     deploy: 
       labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.fbg-bgio.rule=Host(`test1.sahajanand-games.com`) && Path(`/socket.io/`)"
-      - "traefik.http.routers.fbg-bgio.entrypoints=web-secure"
-      - "traefik.http.routers.fbg-bgio.tls=true"
-      - "traefik.http.routers.fbg-bgio.service=fbg-bgio"
-      - "traefik.http.services.fbg-bgio.loadbalancer.server.port=8001"
+        - "traefik.enable=true"
+        - "traefik.http.routers.fbg-bgio.rule=Host(`${DOMAIN}`) && Path(`/socket.io/`)"
+        - "traefik.http.routers.fbg-bgio.entrypoints=web-secure"
+        - "traefik.http.routers.fbg-bgio.tls=true"
+        - "traefik.http.routers.fbg-bgio.service=fbg-bgio"
+        - "traefik.http.services.fbg-bgio.loadbalancer.server.port=8001"
+        # SSL Config
+        - "traefik.http.routers.fbg-bgio.tls.certresolver=letsencryptresolver"
+    
   
   backend:
     <<: *default-opts
     image: shjgames/fbg-server
     environment: 
-      BGIO_PUBLIC_SERVERS: 'https://test1.sahajanand-games.com'
+      BGIO_PUBLIC_SERVERS: 'https://${DOMAIN}'
       BGIO_PRIVATE_SERVERS: 'http://bgio:8001'
       JWT_SECRET: 'SomethingVerySecret'
       POSTGRES_URL: postgresql://DB_USER:DB_PASS@postgres-db:5432/FBG_DB
@@ -82,11 +88,13 @@ services:
     deploy: 
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.fbg-backend.rule=Host(`test1.sahajanand-games.com`) && Path(`/graphql`)"
+        - "traefik.http.routers.fbg-backend.rule=Host(`${DOMAIN}`) && Path(`/graphql`)"
         - "traefik.http.routers.fbg-backend.entrypoints=web-secure"
         - "traefik.http.routers.fbg-backend.tls=true"
         - "traefik.http.routers.fbg-backend.service=fbg-backend"
         - "traefik.http.services.fbg-backend.loadbalancer.server.port=3001"
+        # SSL Config
+        - "traefik.http.routers.fbg-backend.tls.certresolver=letsencryptresolver"
 
   traefik:
     <<: *default-opts
@@ -102,13 +110,16 @@ services:
       - "--entrypoints.web-insecure.http.redirections.entrypoint.to=web-secure"
       - "--entrypoints.web-insecure.http.redirections.entrypoint.scheme=https"
       - "--entrypoints.web-secure.address=:443"
-      - "--accesslog"
+      # SSL configuration
+      - "--certificatesresolvers.letsencryptresolver.acme.httpchallenge=true"
+      - "--certificatesresolvers.letsencryptresolver.acme.httpchallenge.entrypoint=web-insecure"
+      - "--certificatesresolvers.letsencryptresolver.acme.email=${LE_EMAIL}"
+      - "--certificatesresolvers.letsencryptresolver.acme.storage=/letsencrypt/acme.json"
     ports:
       - "80:80"
       - "443:443"
-      - "8080:8080"
-    # volumes:
-    #   - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    volumes:
+      - traefik-certs:/letsencrypt
     networks: 
       - traefik_network
 
@@ -130,4 +141,6 @@ networks:
 
 volumes: 
   fbg-postgres-db: 
+    external: true
+  traefik-certs: 
     external: true
