@@ -18,15 +18,16 @@ if ! [[ $(which docker) && $(docker --version) ]]; then
     sudo apt-get install docker-ce docker-ce-cli containerd.io
 fi
 
-if [ "$(docker info | grep Swarm | sed 's/Swarm: //g')" == "inactive" ]; then
-    docker swarm init
+if [[ ! $(docker info --format '{{.Swarm.ControlAvailable}}') ]]; then
+    echo "initialize docker swarm and rerun script."
+    exit 0
 fi
 
-if ! [ "$(docker volume inspect fbg-postgres-db)" ]; then
+if [[ "$(docker volume ls | grep "fbg-postgres-db")" == "" ]] ; then
     docker volume create fbg-postgres-db
-fi 
+fi
 
-if ! [ "$(docker network inspect traefik_network)" ]; then 
+if [[ "$(docker network ls | grep "traefik_network")" == "" ]] ; then
     docker network create -d overlay -o encrypted=true traefik_network
 fi
 
